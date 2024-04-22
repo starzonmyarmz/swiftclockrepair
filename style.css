@@ -251,28 +251,6 @@ a {
   touch-action: manipulation;
 }
 
-
-
-
-.container {
-  margin-inline: auto;
-  max-width: clamp(16rem, 100vw, 1300px);
-  padding-inline: var(--space-lg);
-  position: relative;
-}
-
-
-.callout {
-  background: oklch(var(--gold));
-  color: oklch(var(--black));
-  font-family: var(--font-serif);
-  padding: var(--space-sm) var(--space-md);
-  text-decoration: none;
-}
-
-
-
-
 #hero {
   background: url("images/clocks.avif") 50% 50% no-repeat;
   background-size: cover;
@@ -363,7 +341,20 @@ a {
   background: oklch(var(--tan));
 }
 
+.container {
+  margin-inline: auto;
+  max-width: clamp(16rem, 100vw, 1300px);
+  padding-inline: var(--space-lg);
+  position: relative;
+}
 
+.callout {
+  background: oklch(var(--gold));
+  color: oklch(var(--black));
+  font-family: var(--font-serif);
+  padding: var(--space-sm) var(--space-md);
+  text-decoration: none;
+}
 
 .grid-2 {
   display: grid;

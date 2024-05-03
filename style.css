@@ -85,7 +85,7 @@ nav {
     flex: 1;
   }
 
-  a:not(:last-child) {
+  a:not(:last-child):not(#logo) {
     color: oklch(var(--cream));
     font-family: var(--font-serif);
     font-size: 1.3rem;
@@ -206,6 +206,7 @@ h4 {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
+  margin-block-end: var(--space-sm);
 
   &::after {
     border-block: 1px solid oklch(var(--black));
@@ -245,17 +246,17 @@ img, svg {
 }
 
 a {
-  color: var(--gold);
+  color: oklch(var(--gold));
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
   touch-action: manipulation;
 }
 
 #hero {
-  background: url("images/clocks.avif") 50% 50% no-repeat;
+  background: url("images/clocks.webp") 50% 50% no-repeat;
   background-size: cover;
   display: grid;
-  font-size: 2rem;
+  font-size: 1.5rem;
   min-height: 100dvh;
   place-items: center;
   text-align: center;
@@ -264,6 +265,7 @@ a {
 #logo {
   filter: drop-shadow(0 2rem 2rem oklch(var(--black)));
   margin-inline: var(--space-lg);
+  user-select: none;
 }
 
 #clock {
@@ -302,7 +304,7 @@ a {
 }
 
 #testimonials {
-  background: oklch(var(--tan));
+  background: oklch(var(--tan)) url("./images/swish1.svg") 100% 0 no-repeat;
 
   li {
     background: oklch(var(--cream));
@@ -325,6 +327,7 @@ a {
 }
 
 #gallery {
+  background: url("./images/swish2.svg") 0 0 no-repeat;
   button {
     border: 0;
     cursor: pointer;
@@ -338,7 +341,7 @@ a {
 }
 
 #service {
-  background: oklch(var(--tan));
+  background: oklch(var(--tan)) url("./images/swish3.svg") 100% 0 no-repeat;
 }
 
 .container {

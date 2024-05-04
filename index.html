@@ -5,22 +5,20 @@
   <title>Swift Clock Repair</title>
   <meta description="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="/favicon.png" type="image/png">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oranienbaum&family=Questrial&display=swap">
   <link rel="stylesheet" href="./style.css">
-  <script src="./script.js"></script>
 </head>
 <body>
   <nav>
     <a href="#about">About</a>
     <a href="#testimonials">Testimonials</a>
     <a href="#hero" id="logo">
-      <img id="clock" srcset="images/logo@3x.png 3x, images/logo@2x.png 2x" src="images/logo.png" height="124" width="277" alt="Swift Clock Repair logo">
-      <img id="hour" srcset="images/logo_hour@3x.png 3x, images/logo_hour@2x.png 2x" src="images/logo_hour.png" height="19" width="31" alt="" aria-hidden="true">
-      <div id="minute-wrap"><img id="minute" srcset="images/logo_minute@3x.png 3x, images/logo_minute@2x.png 2x" src="images/logo_minute.png" height="28" width="37" alt="" aria-hidden="true"></div>
+      <img id="clock" srcset="./images/logo@3x.png 3x, images/logo@2x.png 2x" src="./images/logo.png" height="124" width="277" alt="Swift Clock Repair logo">
+      <img id="hour" srcset="./images/logo_hour@3x.png 3x, images/logo_hour@2x.png 2x" src="./images/logo_hour.png" height="19" width="31" alt="" aria-hidden="true">
+      <div id="minute-wrap"><img id="minute" srcset="./images/logo_minute@3x.png 3x, images/logo_minute@2x.png 2x" src="./images/logo_minute.png" height="28" width="37" alt="" aria-hidden="true"></div>
     </a>
     <a href="#gallery">Gallery</a>
     <a href="#service">Service Area</a>
@@ -45,7 +43,7 @@
       </header>
 
       <div class="grid-2">
-        <img srcset="./images/gears@2x.webp 2x" src="images/gears.webp" width="900" height="900" alt="Clock internals">
+        <img srcset="./images/gears@2x.webp 2x" src="./images/gears.webp" width="900" height="900" alt="Clock internals">
 
         <div>
           <p>Clocks are more than just timekeepers; they’re heirlooms, passed down through generations, each tick a whisper of history. These intricate mechanisms were crafted by ingenious minds, and preserving their legacy is my passion.</p>
@@ -348,5 +346,16 @@
       <p>© 2024 Swift Clock Repair. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const ob = new IntersectionObserver((event) => {
+        document.querySelector('nav').classList.toggle('solid', !event[0].isIntersecting)
+      }, {
+        threshold: 0.9
+      })
+      ob.observe(document.getElementById('hero'));
+    })
+  </script>
 </body>
 </html>

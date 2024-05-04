@@ -328,6 +328,7 @@ a {
 
 #gallery {
   background: url("./images/swish2.svg") 0 0 no-repeat;
+
   button {
     border: 0;
     cursor: pointer;
@@ -336,7 +337,14 @@ a {
 
     img {
       aspect-ratio: 3 / 2;
+      object-fit: cover;
+      object-position: top;
     }
+  }
+
+  figure img {
+    max-height: 80dvh;
+    max-width: 80dvw;
   }
 }
 

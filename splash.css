@@ -1,0 +1,222 @@
+:root {
+  --cream: 99.22% 0.005 117.92;
+  --tan: 95.84% 0.021 100.99;
+  --black: 19.23% 0.023 91.8;
+  --gold: 84.45% 0.19 84.51;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+  --font-serif: "Oranienbaum", serif;
+  --font-sans: "Questrial", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: oklch(var(--cream));
+  background: oklch(var(--black));
+  text-shadow: none;
+}
+
+:target {
+  scroll-margin-block: 9ex;
+}
+
+:focus-visible {
+  outline: 2px solid oklch(var(--black));
+  outline-offset: 2px;
+}
+
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+body {
+  background: oklch(var(--cream));
+  color: oklch(var(--black));
+  font-family: var(--font-sans);
+  font-optical-sizing: auto;
+  font-size: calc(1rem + 0.25vw);
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.45;
+  text-wrap: pretty;
+
+}
+
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+section {
+  padding-block: var(--space-xl);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+h1 {
+  color: oklch(var(--cream));
+  font-size: 3rem;
+  line-height: 1;
+  padding-block: var(--space-lg);
+
+  span {
+    background: oklch(var(--black));
+  }
+}
+
+h2 {
+  color: oklch(var(--cream));
+  font-size: 2rem;
+  line-height: 1;
+}
+
+h3 {
+  flex: 2;
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+h4 {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-block-end: var(--space-sm);
+
+  &::after {
+    border-block: 1px solid oklch(var(--black));
+    display: inline-block;
+    content: "";
+    height: var(--space-xs);
+    flex-grow: 1;
+  }
+}
+
+p + p {
+  margin-block-start: var(--space-md);
+}
+
+button, input, label {
+  line-height: 1;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+a, button {
+  touch-action: manipulation;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img, svg {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: oklch(var(--gold));
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  touch-action: manipulation;
+}
+
+#hero {
+  background: url("images/clocks.webp") 50% 50% no-repeat;
+  background-size: cover;
+  display: grid;
+  font-size: 1.5rem;
+  min-height: 100dvh;
+  place-items: center;
+  text-align: center;
+}
+
+#logo {
+  filter: drop-shadow(0 2rem 1rem oklch(var(--black)));
+  margin-inline: auto;
+  user-select: none;
+  width: fit-content;
+}
+
+#clock {
+  max-width: unset;
+}
+
+#hour {
+  animation: hands 180s infinite linear;
+  top: 36px;
+  left: 111px;
+  position: absolute;
+  transform-origin: 28px 16px;
+}
+
+#minute-wrap {
+  height: 84px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+#minute {
+  animation: hands 30s infinite linear;
+  top: 28px;
+  left: 135px;
+  position: absolute;
+  transform-origin: 3px 24px;
+}
+
+@keyframes hands {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  margin-inline: auto;
+  max-width: clamp(16rem, 100vw, 1300px);
+  padding-inline: var(--space-lg);
+  position: relative;
+}
+
+.callout {
+  background: oklch(var(--gold));
+  color: oklch(var(--black));
+  font-family: var(--font-serif);
+  padding: var(--space-sm) var(--space-md);
+  text-decoration: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

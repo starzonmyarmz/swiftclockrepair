@@ -486,6 +486,18 @@ a {
   }
 }
 
+[popovertargetaction="hide"] {
+  background: #fff;
+  font-size: 36px;
+  font-weight: bold;
+  height: 36px;
+  line-height: 1;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 36px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;

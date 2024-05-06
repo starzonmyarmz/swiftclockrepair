@@ -72,21 +72,33 @@ nav {
   align-items: flex-end;
   background-color: oklch(var(--black) / 0);
   background-image: linear-gradient(to bottom in oklab, oklch(var(--black)) 0%, oklch(var(--black) / 0) 100%);
-  display: flex;
   padding-block: 1rem;
-  position: fixed;
+  position: absolute;
   text-align: center;
   top: 0;
   width: 100%;
   z-index: 2;
   transition: all 0.4s;
 
-  &.solid {
-    background-color: oklch(var(--black));
+  @media (width > 728px) {
+    display: flex;
+    position: fixed;
+
+    &.solid {
+      background-color: oklch(var(--black));
+    }
   }
 
   > * {
     flex: 1;
+  }
+
+  a:not(#logo) {
+    display: none;
+
+    @media (width > 728px) {
+      display: revert;
+    }
   }
 
   a:not(:last-child):not(#logo) {
@@ -160,14 +172,14 @@ header {
         line-height: 1;
       }
     }
+  }
 
-    &.left {
-      text-align: right;
-    }
+  &.left {
+    text-align: right;
+  }
 
-    &.right {
-      flex-direction: row-reverse;
-    }
+  &.right {
+    flex-direction: row-reverse;
   }
 }
 
@@ -201,9 +213,12 @@ h1, h2, h3, h4 {
 
 h1 {
   color: oklch(var(--cream));
-  font-size: 3rem;
   line-height: 1;
   padding-block: var(--space-lg);
+
+  @media (width > 728px) {
+    font-size: 3rem;
+  }
 
   span {
     background: oklch(var(--black));
@@ -284,10 +299,16 @@ a {
 }
 
 #logo {
+  display: inline-block;
   filter: drop-shadow(0 2rem 2rem oklch(var(--black)));
-  margin-inline: var(--space-lg);
+  margin: 0 auto;
   position: relative;
   user-select: none;
+  width: fit-content;
+
+  @media (width > 728px) {
+    margin: 0 var(--space-lg);
+  }
 }
 
 #clock {
@@ -346,6 +367,17 @@ a {
   blockquote {
     margin-block-end: var(--space-sm);
   }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--space-sm);
+
+    @media (width > 728px) {
+      gap: var(--space-lg);
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
 }
 
 #gallery {
@@ -385,7 +417,7 @@ a {
   background: oklch(var(--gold));
   color: oklch(var(--black));
   font-family: var(--font-serif);
-  padding: var(--space-sm) var(--space-md);
+  padding: var(--space-sm);
   text-decoration: none;
 }
 

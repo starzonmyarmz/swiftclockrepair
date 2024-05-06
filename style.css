@@ -150,12 +150,9 @@ header {
     @media (width > 728px) {
       display: flex;
       margin-block-end: unset;
-      margin-inline: 0 calc(-1 * var(--space-xl));
-      padding-inline: var(--space-xl);
 
       .left & {
         flex-direction: row-reverse;
-        margin-inline: calc(-1 * var(--space-xl)) 0;
       }
     }
 

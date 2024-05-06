@@ -61,7 +61,11 @@ figure, blockquote, dl, dd {
 }
 
 section {
-  padding-block: var(--space-xl);
+  padding-block: var(--space-lg);
+
+  @media (width > 728px) {
+    padding-block: var(--space-xl);
+  }
 }
 
 nav {
@@ -114,39 +118,56 @@ nav {
 
 header {
   align-items: center;
-  display: flex;
   gap: 8rem;
-  margin-block-end: 3rem;
+  margin-block-end: var(--space-lg);
+
+  @media (width > 728px) {
+    display: flex;
+    margin-block-end: 3rem;
+  }
 
   div {
     align-items: baseline;
     background: oklch(var(--black));
-    display: flex;
+    display: inline-block;
+    flex: 1;
     font-family: var(--font-serif);
     justify-content: flex-end;
-    margin-inline: 0 -2rem;
-    padding-inline: 2rem;
-    flex: 1;
+    margin-block-end: var(--space-sm);
 
-    .left & {
-      flex-direction: row-reverse;
-      margin-inline: -2rem 0;
+    @media (width > 728px) {
+      display: flex;
+      margin-block-end: unset;
+      margin-inline: 0 calc(-1 * var(--space-xl));
+      padding-inline: var(--space-xl);
+
+      .left & {
+        flex-direction: row-reverse;
+        margin-inline: calc(-1 * var(--space-xl)) 0;
+      }
     }
-  }
 
-  span {
-    color: oklch(var(--cream) / 0.3);
-    font-size: 96px;
-    letter-spacing: -0.01em;
-    line-height: 1;
-  }
+    span {
+      display: none;
+    }
 
-  &.left {
-    text-align: right;
-  }
+    @media (width > 728px) {
+      span {
+        color: oklch(var(--cream) / 0.3);
+        display: revert;
+        font-size: 96px;
+        letter-spacing: -0.01em;
+        line-height: 1;
+      }
+    }
 
-  &.right {
-    flex-direction: row-reverse;
+    &.left {
+      text-align: right;
+    }
+
+    &.right {
+      flex-direction: row-reverse;
+    }
   }
 }
 
@@ -265,6 +286,7 @@ a {
 #logo {
   filter: drop-shadow(0 2rem 2rem oklch(var(--black)));
   margin-inline: var(--space-lg);
+  position: relative;
   user-select: none;
 }
 
@@ -368,23 +390,35 @@ a {
 }
 
 .grid-2 {
-  display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-lg);
+
+  @media (width > 728px) {
+    display: grid;
+  }
 
   img {
     aspect-ratio: 1;
     height: 100%;
+    margin-block-end: var(--space-lg);
     object-fit: cover;
     object-position: right;
     width: 100%;
+
+    @media (width > 728px) {
+      margin-block-end: unset;
+    }
   }
 }
 
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-lg);
+  gap: var(--space-sm);
+
+  @media (width > 728px) {
+    gap: var(--space-lg);
+  }
 }
 
 

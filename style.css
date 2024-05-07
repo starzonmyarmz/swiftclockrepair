@@ -505,3 +505,9 @@ a {
     transition: none !important;
   }
 }
+
+[href="#testimonials"] {
+  color: transparent;
+  pointer-events: none;
+  visibility: hidden;
+}

@@ -488,6 +488,7 @@ a {
 
 [popovertargetaction="hide"] {
   background: #fff;
+  color: oklch(var(--black));
   font-size: 36px;
   font-weight: bold;
   height: 36px;
